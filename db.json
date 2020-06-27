@@ -1,0 +1,21 @@
+{
+  "Question": [
+    { "id": 1, "title": "Informatica", 
+      "questao": "A extenção.jpg é de que tipo de arquivo?",
+      "ano": 2019, 
+      "banca": "Simulados GCO", 
+      "orgao": "tribunal de justica", 
+      "uf":"RJ", 
+      "cargo" : "Analista"}
+  ],
+  "respostas" : 
+      [{ "id": 1,
+        "button": "a",  "option": "Pasta" },
+    { "button": "b",  "option":"text" },
+    { "button": "c",  "option":"imagem" },
+    {"button": "d", "option":"Nenhuma"}
+        
+        ]
+}
+     
+  

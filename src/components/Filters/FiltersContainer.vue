@@ -20,12 +20,22 @@
    
 
    <label class="label mt-5"   v-for="index in comentarios" :key="index.text">
-  <div class="toggle">
-    <input class="toggle-state" type="checkbox" name="check" value="check" />
-    <div class="indicator"></div>
-  </div>
+            <div 
+                class="toggle">
+                      <input 
+                          class="toggle-state" 
+                          type="checkbox" 
+                          name="check" 
+                          value="check" />
+                        <div 
+                          class="indicator">
+                          </div>
+            </div>
 
-  <div   class="label-text">{{index.text}} </div>
+                    <div   
+                    class="label-text">
+                        {{index.text}} 
+                    </div>
 </label>
 
 
@@ -119,8 +129,8 @@ background:#E0E0E0;
   width: 200%;
   background: white;
   z-index: 1;
-  border-radius: 15px;
-  border: 0.4px solid gray;
+  border-radius: 20px;
+  border: 0.7px solid #F5F5F5;
   transform: translate3d(-75%, 0, 0);
   transition: transform 0.2s cubic-bezier(0.85, 0.05, 0.18, 1.35);
 

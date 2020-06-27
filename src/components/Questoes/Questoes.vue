@@ -1,5 +1,5 @@
 <template>
-   <div class="mt-2">
+   <div>
 
 
 <div class="mt-10" 
@@ -51,7 +51,8 @@ v-for="question of questions" :key="question">
 
   <!--Informacoes adicionais da pergunta -->  
 
-          <v-flex class="pl-2 pt-2" > 
+<v-layout id="wrapper"> 
+          <v-flex id="item" class="pl-2 pt-2" > 
                 <h6>
                     Ano:
                 </h6> 
@@ -61,7 +62,7 @@ v-for="question of questions" :key="question">
            </v-flex>
 
        <v-flex 
-        class="pt-2" > 
+        class="pt-2" id="item" > 
               <h6>
                     Banca:
               </h6> 
@@ -70,7 +71,7 @@ v-for="question of questions" :key="question">
                     </p>
          </v-flex>
 
-         <v-flex class="pt-2" > 
+         <v-flex id="item" class="pt-2" > 
                 <h6>
                   Órgão:
                   </h6>
@@ -79,7 +80,7 @@ v-for="question of questions" :key="question">
                       </p>
           </v-flex>
 
-         <v-flex class="pt-2" > 
+         <v-flex id="item" class="pt-2" > 
                <h6>
                UF: 
                </h6>
@@ -88,15 +89,15 @@ v-for="question of questions" :key="question">
                      </p>
           </v-flex>
 
-          <v-flex class="pt-2" >  
+          <v-flex id="item" class="pt-2" >  
                 <h6>
                   Cargo:
                 </h6> 
                 <p>
                   {{question.cargo}} 
                 </p>
-            </v-flex>
-
+            </v-flex> 
+</v-layout>
    </v-layout>  
 
 
@@ -175,7 +176,6 @@ v-for="question of questions" :key="question">
 
 
 </div>
-
  </div>
 </template>
 
@@ -184,16 +184,9 @@ import axios from 'axios';
 export default {
     data: function () {
       return  ({
-      respostas: [
-       
-      ],
-  
-      questions: []
-    
-}
-
-    )
-    },
+      respostas: [],
+      questions: []  })
+  },
     created () {
     axios.get('http://localhost:3000/Question')
       .then(response => {
@@ -201,11 +194,8 @@ export default {
       })
       .catch(error => {
         console.log(error)
-
-   
-
       }),
-
+          
         axios.get(' http://localhost:3000/respostas')
       .then(response => {
         this.respostas = response.data
@@ -222,4 +212,28 @@ export default {
 p {
     font-size: 13px;
 }
-</style>>
+ #wrapper {
+  max-height: 120px;
+  display: flex;
+  overflow-x: auto;
+  background: white;
+
+}
+
+#wrapper #item {
+  min-width: 100px;
+  line-height: 20px;
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 550px) {
+    p {  
+      font-size: 12px;
+      
+    }
+   
+
+}
+
+</style>
